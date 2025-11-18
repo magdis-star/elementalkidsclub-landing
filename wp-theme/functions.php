@@ -93,7 +93,7 @@ function elementalkidsclub_tailwind_config() {
                         'sans': ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'brand-bg': '#E5E7EB',
+                        'brand-bg': '#C8E6F5',
                         'brand-yellow': '#FAD02E',
                         'brand-pink': '#F43F5E',
                         'brand-blue': '#3B82F6',
