@@ -16,40 +16,30 @@
             lucide.createIcons();
         }
 
-        // Download Sample Button Functionality
-        const downloadBtn = document.getElementById('download-btn');
-        const downloadMessage = document.getElementById('download-message');
+        // Wild Mail Bonus Form Handler
+        const bonusForm = document.getElementById('bonus-form');
+        const bonusSuccess = document.getElementById('bonus-success');
 
-        if (downloadBtn && downloadMessage) {
-            downloadBtn.addEventListener('click', function() {
-                // Show confirmation message
-                downloadMessage.classList.remove('hidden');
-
-                // Simulate download: create a blob and download it
-                const downloadContent = 'Este es un PDF de muestra simulado para Elemental Kids Club. El contenido real sería un archivo PDF con ejercicios de lógica, razonamiento y pasatiempos educativos.';
-                const downloadUrl = URL.createObjectURL(new Blob([downloadContent], {type: 'application/pdf'}));
-
-                const a = document.createElement('a');
-                a.href = downloadUrl;
-                a.download = 'Muestra_Actividades_ElementalKidsClub.pdf';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(downloadUrl);
-
-                // Update button appearance
-                downloadBtn.innerHTML = '<i data-lucide="check-circle" class="w-6 h-6 inline mr-3"></i>¡DESCARGADO!';
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
+        if (bonusForm) {
+            bonusForm.addEventListener('submit', function(e) {
+                // If Wild Mail URL is not configured, prevent default and show message
+                if (this.action.includes('YOUR_WILDMAIL_FORM_ACTION_URL_HERE')) {
+                    e.preventDefault();
+                    alert('Por favor, configura la URL de Wild Mail en el código del formulario.');
+                    return;
                 }
-                downloadBtn.classList.remove('bg-brand-yellow', 'hover:bg-yellow-400');
-                downloadBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
-                downloadBtn.disabled = true;
 
-                // Hide message after 5 seconds
+                // Show success message after form submission
+                // Note: This will only work if Wild Mail redirects back or if using AJAX
                 setTimeout(function() {
-                    downloadMessage.classList.add('hidden');
-                }, 5000);
+                    if (bonusSuccess) {
+                        bonusSuccess.classList.remove('hidden');
+                        bonusForm.reset();
+                        setTimeout(function() {
+                            bonusSuccess.classList.add('hidden');
+                        }, 8000);
+                    }
+                }, 1000);
             });
         }
 
