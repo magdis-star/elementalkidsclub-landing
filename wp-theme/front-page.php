@@ -1,0 +1,446 @@
+<?php
+/**
+ * Front Page Template - Landing Page
+ *
+ * @package ElementalKidsClub
+ * @since 1.0.0
+ */
+
+get_header();
+
+// Get customizer values
+$hero_title = ekc_get_option('hero_title', '¿BUSCAS HORAS DE DIVERSIÓN INTELIGENTE LEJOS DE LAS PANTALLAS?');
+$hero_description = ekc_get_option('hero_description', 'Nuestro cuaderno combina Juegos de Lógica, Pasatiempos Entretenidos y Retos Educativos para niños de 8 a 12 años, garantizando que el tiempo libre sea de calidad.');
+$hero_image = ekc_get_option('hero_image', get_template_directory_uri() . '/images/image1.jpg');
+$benefits_image = ekc_get_option('benefits_image', get_template_directory_uri() . '/images/image2.jpg');
+$interior_image = ekc_get_option('interior_image', get_template_directory_uri() . '/images/image3.jpg');
+$amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YYTF7V/');
+?>
+
+<!-- 1. SECCIÓN HERO -->
+<section id="hero" class="pt-12 md:pt-16 pb-16 md:pb-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 scroll-animate">
+
+        <!-- Columna Izquierda: Mensaje Principal -->
+        <div class="order-2 lg:order-1">
+            <div class="bubble-title inline-block mb-6 max-w-lg">
+                <p class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline tracking-wide uppercase">
+                    <?php echo esc_html($hero_title); ?>
+                </p>
+            </div>
+
+            <p class="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 md:mb-10 font-medium font-sans">
+                <?php echo esc_html($hero_description); ?>
+            </p>
+
+            <!-- CTA Principal -->
+            <a href="<?php echo esc_url($amazon_url); ?>" target="_blank" class="cta-button-3d pulse-cta inline-block px-8 md:px-12 py-4 md:py-5 bg-brand-pink text-white text-2xl md:text-3xl font-bold rounded-xl transition duration-300 font-headline tracking-wider border-2 border-brand-dark">
+                <i data-lucide="brain" class="w-6 h-6 md:w-7 md:h-7 inline mr-3"></i> ¡EMPEZAR LA DIVERSIÓN!
+            </a>
+        </div>
+
+        <!-- Columna Derecha: Imagen Hero -->
+        <div class="flex justify-center lg:justify-end order-1 lg:order-2">
+            <img src="<?php echo esc_url($hero_image); ?>"
+                 alt="Cuaderno de Actividades Divertidas - Elemental Kids Club"
+                 class="w-full max-w-md lg:max-w-lg rounded-lg shadow-2xl transition duration-500 hover:scale-105 hover:rotate-3"
+                 style="border: 5px solid #FAD02E;"
+                 loading="eager">
+        </div>
+    </div>
+</section>
+
+<!-- Línea decorativa -->
+<div class="divider-wavy"></div>
+
+<!-- 2. SECCIÓN BENEFICIOS -->
+<section id="benefits" class="py-16 md:py-20 lg:py-28 bg-white/90">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center scroll-animate">
+
+        <!-- Columna Izquierda: Imagen de Beneficios -->
+        <div class="flex justify-center lg:justify-start">
+            <img src="<?php echo esc_url($benefits_image); ?>"
+                 alt="Diversión, conexión y aprendizaje todo en un mismo libro"
+                 class="w-full max-w-md rounded-xl shadow-xl border-4 border-brand-blue transition duration-500 hover:scale-105 hover:-rotate-3"
+                 loading="lazy">
+        </div>
+
+        <!-- Columna Derecha: Por Qué Es Especial -->
+        <div>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-6 font-headline tracking-wider uppercase">
+                ¿POR QUÉ ESTE CUADERNO ES DIFERENTE?
+            </h2>
+            <ul class="space-y-4 text-lg md:text-xl font-sans text-gray-700">
+                <li class="flex items-start">
+                    <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 text-brand-pink flex-shrink-0"></i>
+                    <span><strong>Más de 80 páginas de contenido:</strong> No es un simple librito de pasatiempos. Es un cuaderno completo con actividades cuidadosamente diseñadas y graduadas en dificultad.</span>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 text-brand-pink flex-shrink-0"></i>
+                    <span><strong>Soluciones incluidas:</strong> Tu hijo puede verificar sus respuestas de forma independiente, fomentando el aprendizaje autónomo sin necesidad de supervisión constante.</span>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 text-brand-pink flex-shrink-0"></i>
+                    <span><strong>Bonus descargable gratis:</strong> Incluye acceso a contenido extra digital que complementa el libro físico, ¡doble diversión garantizada!</span>
+                </li>
+                <li class="flex items-start">
+                    <i data-lucide="check-circle" class="w-6 h-6 mr-3 mt-1 text-brand-pink flex-shrink-0"></i>
+                    <span><strong>Perfecto para llevar:</strong> Formato ideal para viajes, restaurantes, salas de espera o cualquier momento en que necesites mantener a tu hijo entretenido de forma productiva.</span>
+                </li>
+            </ul>
+
+            <p class="text-2xl md:text-3xl font-extrabold text-brand-pink mt-8 font-headline tracking-wider uppercase border-t-2 border-brand-yellow pt-4">
+                La mejor inversión en el desarrollo de tu hijo
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Línea decorativa -->
+<div class="divider-wavy"></div>
+
+<!-- 2.5 SECCIÓN ACTIVIDADES DETALLADAS -->
+<section id="activities-breakdown" class="py-16 md:py-20 lg:py-28 notebook-background">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark mb-4 font-headline tracking-wider uppercase">
+                ¿QUÉ ENCONTRARÁS DENTRO?
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-sans">
+                Más de <strong class="text-brand-pink">80 páginas</strong> repletas de actividades diseñadas para mantener a tu hijo entretenido durante horas.
+            </p>
+        </div>
+
+        <!-- Grid de Actividades -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Actividad 1 -->
+            <div class="feature-block bg-white rounded-xl p-6 shadow-lg stagger-item">
+                <div class="flex items-center justify-center w-16 h-16 bg-brand-yellow rounded-full mb-4 mx-auto">
+                    <i data-lucide="puzzle" class="w-8 h-8 text-brand-dark"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider text-center">JUEGOS DE LÓGICA</h3>
+                <p class="text-gray-700 font-sans text-center">
+                    Sudokus, secuencias numéricas, y desafíos de razonamiento que desarrollan el pensamiento lógico y la concentración.
+                </p>
+            </div>
+
+            <!-- Actividad 2 -->
+            <div class="feature-block bg-white rounded-xl p-6 shadow-lg stagger-item">
+                <div class="flex items-center justify-center w-16 h-16 bg-brand-pink rounded-full mb-4 mx-auto">
+                    <i data-lucide="search" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider text-center">BUSCA Y ENCUENTRA</h3>
+                <p class="text-gray-700 font-sans text-center">
+                    Sopas de letras, diferencias ocultas y retos visuales que agudizan la atención al detalle y la percepción visual.
+                </p>
+            </div>
+
+            <!-- Actividad 3 -->
+            <div class="feature-block bg-white rounded-xl p-6 shadow-lg stagger-item">
+                <div class="flex items-center justify-center w-16 h-16 bg-brand-blue rounded-full mb-4 mx-auto">
+                    <i data-lucide="calculator" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider text-center">RETOS MATEMÁTICOS</h3>
+                <p class="text-gray-700 font-sans text-center">
+                    Operaciones incógnita, acertijos numéricos y problemas divertidos que refuerzan las habilidades matemáticas.
+                </p>
+            </div>
+
+            <!-- Actividad 4 -->
+            <div class="feature-block bg-white rounded-xl p-6 shadow-lg stagger-item">
+                <div class="flex items-center justify-center w-16 h-16 bg-brand-yellow rounded-full mb-4 mx-auto">
+                    <i data-lucide="pen-tool" class="w-8 h-8 text-brand-dark"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider text-center">ACTIVIDADES CREATIVAS</h3>
+                <p class="text-gray-700 font-sans text-center">
+                    Dibujos para completar, laberintos artísticos y ejercicios que estimulan la imaginación y la expresión creativa.
+                </p>
+            </div>
+
+            <!-- Actividad 5 -->
+            <div class="feature-block bg-white rounded-xl p-6 shadow-lg stagger-item">
+                <div class="flex items-center justify-center w-16 h-16 bg-brand-pink rounded-full mb-4 mx-auto">
+                    <i data-lucide="book-open" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider text-center">JUEGOS DE PALABRAS</h3>
+                <p class="text-gray-700 font-sans text-center">
+                    Crucigramas, adivinanzas y pasatiempos lingüísticos que enriquecen el vocabulario y las habilidades verbales.
+                </p>
+            </div>
+
+            <!-- Actividad 6 -->
+            <div class="feature-block bg-white rounded-xl p-6 shadow-lg stagger-item">
+                <div class="flex items-center justify-center w-16 h-16 bg-brand-blue rounded-full mb-4 mx-auto">
+                    <i data-lucide="map" class="w-8 h-8 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider text-center">LABERINTOS Y MÁS</h3>
+                <p class="text-gray-700 font-sans text-center">
+                    Caminos intrincados, conexiones y recorridos que mejoran la planificación espacial y la resolución de problemas.
+                </p>
+            </div>
+        </div>
+
+        <!-- CTA de Actividades -->
+        <div class="text-center mt-12">
+            <p class="text-2xl md:text-3xl font-extrabold text-brand-blue mb-6 font-headline tracking-wider uppercase">
+                Y mucho, mucho más...
+            </p>
+            <a href="<?php echo esc_url($amazon_url); ?>" target="_blank" class="cta-button-3d inline-block px-10 py-4 bg-brand-pink text-white text-2xl font-bold rounded-xl transition duration-300 font-headline tracking-wider border-2 border-brand-dark">
+                <i data-lucide="shopping-cart" class="w-6 h-6 inline mr-3"></i> VER EN AMAZON
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Línea decorativa -->
+<div class="divider-wavy"></div>
+
+<!-- 3. SECCIÓN MUESTRA/INTERIOR -->
+<section id="sample-interior" class="py-16 md:py-20 lg:py-28 notebook-background">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center scroll-animate">
+
+        <!-- Columna Izquierda: Vista Interior del Libro -->
+        <div class="flex justify-center lg:justify-start">
+            <img src="<?php echo esc_url($interior_image); ?>"
+                 alt="Interior del cuaderno: Busca y encuentra, Operación Incógnita, Siete Diferencias"
+                 class="w-full max-w-lg rounded-xl shadow-2xl transition duration-500 hover:scale-105 hover:rotate-3 transform"
+                 style="border: 5px solid #FAD02E;"
+                 loading="lazy">
+        </div>
+
+        <!-- Columna Derecha: Mensaje de "Imaginación" y CTA -->
+        <div class="order-first lg:order-last">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark mb-6 font-headline tracking-wider uppercase">
+                Porque la mejor pantalla... es su <span class="text-brand-blue">imaginación</span>.
+            </h2>
+            <p class="text-xl md:text-2xl font-medium text-gray-700 mb-8 md:mb-10 font-sans">
+                El cuaderno incluye retos como <strong>"Siete Diferencias"</strong>, <strong>"Operación Incógnita"</strong> y <strong>"Busca y Encuentra"</strong> que garantizan que el cerebro de tu hijo trabaje a máxima potencia.
+            </p>
+
+            <!-- CTA Secundario: Muestra Gratuita -->
+            <button id="download-btn" class="cta-button-3d inline-block px-8 md:px-10 py-3 md:py-4 bg-brand-yellow text-brand-dark text-xl md:text-2xl font-bold rounded-xl transition duration-300 font-headline tracking-wider border-2 border-brand-dark hover:bg-yellow-400">
+                <i data-lucide="file-text" class="w-5 h-5 md:w-6 md:h-6 inline mr-3"></i> ¡QUIERO LA MUESTRA GRATIS!
+            </button>
+
+            <!-- Mensaje de Confirmación -->
+            <div id="download-message" class="mt-6 text-brand-dark bg-white p-4 rounded-xl shadow-inner hidden max-w-xs">
+                <p class="font-semibold flex items-center justify-center font-sans">
+                    <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-600"></i>
+                    ¡Descarga completada!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Línea decorativa -->
+<div class="divider-wavy"></div>
+
+<!-- 3.5 SECCIÓN TESTIMONIOS -->
+<section id="testimonials" class="py-16 md:py-20 lg:py-28 bg-white/90">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark mb-4 font-headline tracking-wider uppercase">
+                LO QUE DICEN LOS PADRES
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto font-sans">
+                Miles de familias ya están disfrutando del cuaderno
+            </p>
+        </div>
+
+        <!-- Grid de Testimonios -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Testimonio 1 - Francisco -->
+            <div class="bg-brand-yellow/20 rounded-xl p-6 border-4 border-brand-yellow shadow-lg stagger-item">
+                <div class="flex items-center mb-4">
+                    <div class="flex text-brand-pink">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                </div>
+                <h4 class="font-extrabold text-brand-dark mb-2 font-headline tracking-wider text-lg">REGALO DE CUMPLE PERFECTO</h4>
+                <p class="text-gray-800 mb-4 font-sans italic">
+                    "Lo compré como regalo para un cumple y gustó muchísimo. Tiene una variedad de pasatiempos impresionante. Es ideal para niños que les gusta resolver enigmas y ponerse a prueba. Es un regalo que sale bien de precio y que gusta al niño y a los padres."
+                </p>
+                <p class="font-bold text-brand-dark font-sans">— Francisco</p>
+                <p class="text-xs text-gray-600 font-sans mt-1">Compra verificada en Amazon</p>
+            </div>
+
+            <!-- Testimonio 2 - Elizabeth -->
+            <div class="bg-brand-blue/20 rounded-xl p-6 border-4 border-brand-blue shadow-lg stagger-item">
+                <div class="flex items-center mb-4">
+                    <div class="flex text-brand-pink">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                </div>
+                <h4 class="font-extrabold text-brand-dark mb-2 font-headline tracking-wider text-lg">UN LIBRO MUY DIVERTIDO</h4>
+                <p class="text-gray-800 mb-4 font-sans italic">
+                    "Lo compré como regalo y triunfó. Los dibujos son bonitos y las actividades están bien explicadas y vienen las soluciones al final. Mi sobrina de 11 años se pasa horas resolviendo retos y enigmas. Una compra excelente."
+                </p>
+                <p class="font-bold text-brand-dark font-sans">— Elizabeth</p>
+                <p class="text-xs text-gray-600 font-sans mt-1">Compra verificada en Amazon</p>
+            </div>
+
+            <!-- Testimonio 3 - Brenda Stc -->
+            <div class="bg-brand-pink/20 rounded-xl p-6 border-4 border-brand-pink shadow-lg stagger-item">
+                <div class="flex items-center mb-4">
+                    <div class="flex text-brand-pink">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                </div>
+                <h4 class="font-extrabold text-brand-dark mb-2 font-headline tracking-wider text-lg">PARA REDUCIR USO DE PANTALLAS</h4>
+                <p class="text-gray-800 mb-4 font-sans italic">
+                    "Compré este cuaderno para tratar de quitar un poco las pantallas y funcionó mejor de lo esperado. A mi hija de 8 años le encantan los desafíos y aquí tiene para aburrir. Muy educativo y con mucha variedad."
+                </p>
+                <p class="font-bold text-brand-dark font-sans">— Brenda Stc</p>
+                <p class="text-xs text-gray-600 font-sans mt-1">Compra verificada en Amazon</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Línea decorativa -->
+<div class="divider-wavy"></div>
+
+<!-- 3.7 SECCIÓN FAQ -->
+<section id="faq" class="py-16 md:py-20 lg:py-28 notebook-background">
+    <div class="max-w-5xl mx-auto px-6 scroll-animate">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-dark mb-4 font-headline tracking-wider uppercase">
+                PREGUNTAS FRECUENTES
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-700 font-sans">
+                Resolvemos tus dudas
+            </p>
+        </div>
+
+        <!-- Preguntas y Respuestas -->
+        <div class="space-y-6">
+            <!-- FAQ 1 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-yellow">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
+                    ¿Para qué edades está recomendado?
+                </h3>
+                <p class="text-gray-700 font-sans text-lg">
+                    El cuaderno está diseñado específicamente para niños de <strong>8 a 12 años</strong>. Las actividades están graduadas en dificultad, por lo que se adaptan perfectamente a diferentes niveles dentro de ese rango de edad.
+                </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-blue">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
+                    ¿Cuántas páginas tiene el cuaderno?
+                </h3>
+                <p class="text-gray-700 font-sans text-lg">
+                    El cuaderno cuenta con más de <strong>80 páginas</strong> repletas de actividades variadas. Es suficiente contenido para mantener a tu hijo entretenido durante semanas, dependiendo de su ritmo.
+                </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-pink">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
+                    ¿Necesita ayuda de un adulto para hacerlo?
+                </h3>
+                <p class="text-gray-700 font-sans text-lg">
+                    ¡No! El cuaderno está diseñado para que los niños puedan trabajar de forma <strong>autónoma</strong>. Las instrucciones son claras y sencillas. Sin embargo, puede ser una excelente oportunidad para compartir tiempo de calidad en familia si lo desean.
+                </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-yellow">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
+                    ¿Viene con soluciones?
+                </h3>
+                <p class="text-gray-700 font-sans text-lg">
+                    Sí, el cuaderno incluye un <strong>solucionario completo</strong> al final para que los niños puedan verificar sus respuestas y aprender de sus errores de forma independiente.
+                </p>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-blue">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
+                    ¿Es adecuado para regalar?
+                </h3>
+                <p class="text-gray-700 font-sans text-lg">
+                    ¡Por supuesto! Es el regalo perfecto para <strong>cumpleaños, Navidad, o cualquier ocasión especial</strong>. Es educativo, divertido y promueve el aprendizaje lejos de las pantallas. Los padres te lo agradecerán.
+                </p>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-pink">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
+                    ¿Cómo y cuándo lo recibiré?
+                </h3>
+                <p class="text-gray-700 font-sans text-lg">
+                    Al comprar a través de Amazon, disfrutas de <strong>envío rápido y seguro</strong>. Si tienes Amazon Prime, lo recibirás en 1-2 días. El proceso de compra es 100% seguro y puedes devolverlo si no quedas satisfecho.
+                </p>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-yellow">
+                <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
+                    ¿Qué formato tiene? ¿Es impreso o digital?
+                </h3>
+                <p class="text-gray-700 font-sans text-lg">
+                    Es un cuaderno <strong>físico impreso</strong> de alta calidad, con papel resistente perfecto para escribir, dibujar y borrar si es necesario. Nada de pantallas, ¡pura diversión analógica!
+                </p>
+            </div>
+        </div>
+
+        <!-- CTA después del FAQ -->
+        <div class="text-center mt-12">
+            <p class="text-2xl md:text-3xl font-extrabold text-brand-blue mb-6 font-headline tracking-wider uppercase">
+                ¿Tienes más preguntas? ¡Pruébalo sin riesgo!
+            </p>
+            <a href="<?php echo esc_url($amazon_url); ?>" target="_blank" class="cta-button-3d inline-block px-10 py-4 bg-brand-pink text-white text-2xl font-bold rounded-xl transition duration-300 font-headline tracking-wider border-2 border-brand-dark">
+                <i data-lucide="shopping-bag" class="w-6 h-6 inline mr-3"></i> COMPRAR AHORA
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Línea decorativa -->
+<div class="divider-wavy"></div>
+
+<!-- 4. SECCIÓN FINAL CTA -->
+<section id="cta-final" class="py-16 md:py-20 lg:py-24 bg-brand-pink relative overflow-hidden">
+    <!-- Elementos decorativos de fondo -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-10 left-10 w-20 h-20 bg-brand-yellow rounded-full"></div>
+        <div class="absolute bottom-10 right-10 w-32 h-32 bg-brand-blue rounded-full"></div>
+        <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white rounded-full"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-white font-headline tracking-wider uppercase">
+            ¡HAZTE CON EL CUADERNO ANTES DE QUE SE AGOTEN!
+        </h2>
+        <p class="text-2xl md:text-3xl font-medium mb-8 md:mb-10 max-w-4xl mx-auto text-white/90 font-sans">
+            La herramienta perfecta para despertar la curiosidad y la inteligencia en casa, ¡sin complicaciones!
+        </p>
+
+        <!-- CTA Principal: Botón Amarillo Fuerte -->
+        <a href="<?php echo esc_url($amazon_url); ?>" target="_blank" class="cta-button-3d pulse-cta inline-block px-10 md:px-12 py-5 md:py-6 bg-brand-yellow text-brand-dark text-3xl md:text-4xl font-bold rounded-xl font-headline tracking-wider border-2 border-brand-dark">
+            <i data-lucide="shopping-bag" class="w-7 h-7 md:w-8 md:h-8 inline mr-3"></i> COMPRAR EN AMAZON
+        </a>
+
+        <div class="mt-8 flex justify-center items-center space-x-4 text-base md:text-lg font-bold text-white">
+            <i data-lucide="lock" class="w-5 h-5 md:w-6 md:h-6"></i>
+            <span class="font-sans">Compra segura y envío rápido garantizados por Amazon.</span>
+        </div>
+    </div>
+</section>
+
+<?php
+get_footer();
