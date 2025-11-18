@@ -19,7 +19,7 @@
 
 <!-- Navegación y Cabecera -->
 <header class="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b-4 border-brand-yellow">
-    <nav class="max-w-7xl mx-auto px-6 py-1 flex justify-between items-center">
+    <nav class="max-w-7xl mx-auto px-6 py-0 flex justify-between items-center">
         <a href="<?php echo esc_url(ekc_get_option('website_url', 'https://elementalkidsclub.com')); ?>" target="_blank" class="flex items-center">
             <img src="<?php echo esc_url(ekc_get_option('site_logo', get_template_directory_uri() . '/images/logo.png')); ?>"
                  alt="<?php bloginfo('name'); ?>"
