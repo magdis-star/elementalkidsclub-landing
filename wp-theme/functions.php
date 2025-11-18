@@ -112,6 +112,24 @@ add_action('wp_head', 'elementalkidsclub_tailwind_config', 5);
  */
 function elementalkidsclub_customize_register($wp_customize) {
 
+    // Logo Section
+    $wp_customize->add_section('logo_section', array(
+        'title' => __('Logo & Branding', 'elementalkidsclub'),
+        'priority' => 29,
+    ));
+
+    $wp_customize->add_setting('site_logo', array(
+        'default' => get_template_directory_uri() . '/images/logo.png',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'site_logo', array(
+        'label' => __('Site Logo', 'elementalkidsclub'),
+        'section' => 'logo_section',
+        'settings' => 'site_logo',
+        'description' => __('Upload your logo image (recommended: square format, PNG with transparency)', 'elementalkidsclub'),
+    )));
+
     // Hero Section
     $wp_customize->add_section('hero_section', array(
         'title' => __('Hero Section', 'elementalkidsclub'),
