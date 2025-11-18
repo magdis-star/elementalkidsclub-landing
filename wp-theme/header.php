@@ -23,7 +23,7 @@
         <a href="<?php echo esc_url(ekc_get_option('website_url', 'https://elementalkidsclub.com')); ?>" target="_blank" class="flex items-center">
             <img src="<?php echo esc_url(ekc_get_option('site_logo', get_template_directory_uri() . '/images/logo.png')); ?>"
                  alt="<?php bloginfo('name'); ?>"
-                 class="h-12 md:h-16 w-auto">
+                 class="h-20 md:h-24 w-auto">
         </a>
         <a href="<?php echo esc_url(ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YYTF7V/')); ?>" target="_blank" class="px-4 md:px-5 py-2 bg-brand-pink text-white text-sm md:text-base font-bold rounded-full hover:bg-red-500 transition duration-300 shadow-md border-2 border-brand-dark/30 font-headline tracking-wider cta-button-3d" style="box-shadow: 0 3px 0 0 #A1102A;">
             COMPRAR →
