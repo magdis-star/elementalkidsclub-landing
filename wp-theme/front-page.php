@@ -223,11 +223,20 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
                     <i data-lucide="gift" class="w-6 h-6 md:w-7 md:h-7 inline mr-2"></i> ¡BONUS EXCLUSIVO!
                 </h3>
                 <p class="text-lg md:text-xl text-gray-700 mb-6 font-sans">
-                    ¿Ya compraste el libro? <strong>Descarga tu contenido extra GRATIS.</strong> Introduce tu email y recibe actividades adicionales directamente en tu bandeja de entrada.
+                    ¿Ya compraste el libro? <strong>Descarga tu contenido extra GRATIS.</strong> Introduce tu nombre y email para recibir actividades adicionales directamente en tu bandeja de entrada.
                 </p>
 
                 <!-- Wild Mail Form - REPLACE action URL with your Wild Mail endpoint -->
                 <form id="bonus-form" action="YOUR_WILDMAIL_FORM_ACTION_URL_HERE" method="POST" class="space-y-4">
+                    <div>
+                        <input
+                            type="text"
+                            name="name"
+                            id="bonus-name"
+                            required
+                            placeholder="Tu nombre"
+                            class="w-full px-4 py-3 text-lg border-2 border-brand-dark rounded-lg focus:outline-none focus:ring-4 focus:ring-brand-yellow/50 font-sans">
+                    </div>
                     <div>
                         <input
                             type="email"
