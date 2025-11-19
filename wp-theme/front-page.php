@@ -50,9 +50,6 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
     </div>
 </section>
 
-<!-- Línea decorativa -->
-<div class="divider-wavy"></div>
-
 <!-- 2. SECCIÓN BENEFICIOS -->
 <section id="benefits" class="py-16 md:py-20 lg:py-28 bg-white/90">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center scroll-animate">
@@ -95,9 +92,6 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
         </div>
     </div>
 </section>
-
-<!-- Línea decorativa -->
-<div class="divider-wavy"></div>
 
 <!-- 2.5 SECCIÓN ACTIVIDADES DETALLADAS -->
 <section id="activities-breakdown" class="py-16 md:py-20 lg:py-28 notebook-background">
@@ -192,9 +186,6 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
     </div>
 </section>
 
-<!-- Línea decorativa -->
-<div class="divider-wavy"></div>
-
 <!-- 3. SECCIÓN MUESTRA/INTERIOR -->
 <section id="sample-interior" class="py-16 md:py-20 lg:py-28 notebook-background">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center scroll-animate">
@@ -264,9 +255,6 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
         </div>
     </div>
 </section>
-
-<!-- Línea decorativa -->
-<div class="divider-wavy"></div>
 
 <!-- 3.5 SECCIÓN TESTIMONIOS -->
 <section id="testimonials" class="py-16 md:py-20 lg:py-28 bg-white/90">
@@ -341,9 +329,6 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
         </div>
     </div>
 </section>
-
-<!-- Línea decorativa -->
-<div class="divider-wavy"></div>
 
 <!-- 3.7 SECCIÓN FAQ -->
 <section id="faq" class="py-16 md:py-20 lg:py-28 notebook-background">
@@ -441,9 +426,6 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
         </div>
     </div>
 </section>
-
-<!-- Línea decorativa -->
-<div class="divider-wavy"></div>
 
 <!-- 4. SECCIÓN FINAL CTA -->
 <section id="cta-final" class="py-16 md:py-20 lg:py-24 bg-brand-pink relative overflow-hidden">
