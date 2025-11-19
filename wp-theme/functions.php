@@ -30,10 +30,6 @@ add_action('after_setup_theme', 'elementalkidsclub_setup');
  * Enqueue Scripts and Styles
  */
 function elementalkidsclub_scripts() {
-    // Preconnect to Google Fonts
-    echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
-    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-
     // Enqueue Google Fonts
     wp_enqueue_style(
         'elementalkidsclub-fonts',
@@ -42,29 +38,11 @@ function elementalkidsclub_scripts() {
         null
     );
 
-    // Enqueue Tailwind CSS (CDN)
-    wp_enqueue_script(
-        'tailwindcss',
-        'https://cdn.tailwindcss.com',
-        array(),
-        null,
-        false
-    );
-
-    // Enqueue Lucide Icons
-    wp_enqueue_script(
-        'lucide-icons',
-        'https://unpkg.com/lucide@latest',
-        array(),
-        null,
-        true
-    );
-
     // Enqueue theme stylesheet
     wp_enqueue_style(
         'elementalkidsclub-style',
         get_stylesheet_uri(),
-        array(),
+        array('elementalkidsclub-fonts'),
         wp_get_theme()->get('Version')
     );
 
@@ -72,7 +50,7 @@ function elementalkidsclub_scripts() {
     wp_enqueue_script(
         'elementalkidsclub-scripts',
         get_template_directory_uri() . '/assets/js/scripts.js',
-        array('lucide-icons'),
+        array(),
         wp_get_theme()->get('Version'),
         true
     );
@@ -80,10 +58,21 @@ function elementalkidsclub_scripts() {
 add_action('wp_enqueue_scripts', 'elementalkidsclub_scripts');
 
 /**
- * Add Tailwind Config to Head
+ * Add Tailwind CSS and Config to Head
  */
-function elementalkidsclub_tailwind_config() {
+function elementalkidsclub_head_scripts() {
     ?>
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -105,7 +94,7 @@ function elementalkidsclub_tailwind_config() {
     </script>
     <?php
 }
-add_action('wp_head', 'elementalkidsclub_tailwind_config', 5);
+add_action('wp_head', 'elementalkidsclub_head_scripts', 1);
 
 /**
  * WordPress Customizer Settings
