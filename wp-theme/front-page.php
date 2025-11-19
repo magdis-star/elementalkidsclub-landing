@@ -270,60 +270,57 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
 
         <!-- Grid de Testimonios -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <!-- Testimonio 1 - Francisco -->
+            <!-- Testimonio 1 -->
             <div class="bg-brand-yellow/20 rounded-xl p-6 border-4 border-brand-yellow shadow-lg stagger-item">
                 <div class="flex items-center mb-4">
                     <div class="flex text-brand-pink">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <?php
+                        $rating_1 = ekc_get_option('testimonial_1_rating', 5);
+                        for ($i = 0; $i < $rating_1; $i++) : ?>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <?php endfor; ?>
                     </div>
                 </div>
-                <h4 class="font-extrabold text-brand-dark mb-2 font-headline tracking-wider text-lg">REGALO DE CUMPLE PERFECTO</h4>
                 <p class="text-gray-800 mb-4 font-sans italic">
-                    "Lo compré como regalo para un cumple y gustó muchísimo. Tiene una variedad de pasatiempos impresionante. Es ideal para niños que les gusta resolver enigmas y ponerse a prueba. Es un regalo que sale bien de precio y que gusta al niño y a los padres."
+                    "<?php echo esc_html(ekc_get_option('testimonial_1_text', 'A mi hijo de 9 años le encanta. Lo compré por recomendación y ha sido un acierto. Ya lo ha completado casi entero y sigue pidiendo más.')); ?>"
                 </p>
-                <p class="font-bold text-brand-dark font-sans">— Francisco</p>
+                <p class="font-bold text-brand-dark font-sans">— <?php echo esc_html(ekc_get_option('testimonial_1_name', 'María G.')); ?></p>
                 <p class="text-xs text-gray-600 font-sans mt-1">Compra verificada en Amazon</p>
             </div>
 
-            <!-- Testimonio 2 - Elizabeth -->
+            <!-- Testimonio 2 -->
             <div class="bg-brand-blue/20 rounded-xl p-6 border-4 border-brand-blue shadow-lg stagger-item">
                 <div class="flex items-center mb-4">
                     <div class="flex text-brand-pink">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <?php
+                        $rating_2 = ekc_get_option('testimonial_2_rating', 5);
+                        for ($i = 0; $i < $rating_2; $i++) : ?>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <?php endfor; ?>
                     </div>
                 </div>
-                <h4 class="font-extrabold text-brand-dark mb-2 font-headline tracking-wider text-lg">UN LIBRO MUY DIVERTIDO</h4>
                 <p class="text-gray-800 mb-4 font-sans italic">
-                    "Lo compré como regalo y triunfó. Los dibujos son bonitos y las actividades están bien explicadas y vienen las soluciones al final. Mi sobrina de 11 años se pasa horas resolviendo retos y enigmas. Una compra excelente."
+                    "<?php echo esc_html(ekc_get_option('testimonial_2_text', 'Perfecto para mantenerlos ocupados en esos días de lluvia. Mi hija está súper entretenida y no pide la tablet. ¡Misión cumplida!')); ?>"
                 </p>
-                <p class="font-bold text-brand-dark font-sans">— Elizabeth</p>
+                <p class="font-bold text-brand-dark font-sans">— <?php echo esc_html(ekc_get_option('testimonial_2_name', 'Laura M.')); ?></p>
                 <p class="text-xs text-gray-600 font-sans mt-1">Compra verificada en Amazon</p>
             </div>
 
-            <!-- Testimonio 3 - Brenda Stc -->
+            <!-- Testimonio 3 -->
             <div class="bg-brand-pink/20 rounded-xl p-6 border-4 border-brand-pink shadow-lg stagger-item">
                 <div class="flex items-center mb-4">
                     <div class="flex text-brand-pink">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <?php
+                        $rating_3 = ekc_get_option('testimonial_3_rating', 5);
+                        for ($i = 0; $i < $rating_3; $i++) : ?>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <?php endfor; ?>
                     </div>
                 </div>
-                <h4 class="font-extrabold text-brand-dark mb-2 font-headline tracking-wider text-lg">PARA REDUCIR USO DE PANTALLAS</h4>
                 <p class="text-gray-800 mb-4 font-sans italic">
-                    "Compré este cuaderno para tratar de quitar un poco las pantallas y funcionó mejor de lo esperado. A mi hija de 8 años le encantan los desafíos y aquí tiene para aburrir. Muy educativo y con mucha variedad."
+                    "<?php echo esc_html(ekc_get_option('testimonial_3_text', 'Tiene actividades muy variadas. Desde sudokus hasta laberintos. Mi hijo no se aburre y es ideal para el desarrollo cognitivo.')); ?>"
                 </p>
-                <p class="font-bold text-brand-dark font-sans">— Brenda Stc</p>
+                <p class="font-bold text-brand-dark font-sans">— <?php echo esc_html(ekc_get_option('testimonial_3_name', 'Carlos R.')); ?></p>
                 <p class="text-xs text-gray-600 font-sans mt-1">Compra verificada en Amazon</p>
             </div>
         </div>
@@ -347,70 +344,70 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
             <!-- FAQ 1 -->
             <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-yellow">
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
-                    ¿Para qué edades está recomendado?
+                    <?php echo esc_html(ekc_get_option('faq_1_question', '¿Para qué edades está recomendado?')); ?>
                 </h3>
                 <p class="text-gray-700 font-sans text-lg">
-                    El cuaderno está diseñado específicamente para niños de <strong>8 a 12 años</strong>. Las actividades están graduadas en dificultad, por lo que se adaptan perfectamente a diferentes niveles dentro de ese rango de edad.
+                    <?php echo esc_html(ekc_get_option('faq_1_answer', 'El cuaderno está diseñado específicamente para niños de 8 a 12 años, con actividades que se adaptan a su nivel cognitivo.')); ?>
                 </p>
             </div>
 
             <!-- FAQ 2 -->
             <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-blue">
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
-                    ¿Cuántas páginas tiene el cuaderno?
+                    <?php echo esc_html(ekc_get_option('faq_2_question', '¿Necesita supervisión de un adulto?')); ?>
                 </h3>
                 <p class="text-gray-700 font-sans text-lg">
-                    El cuaderno cuenta con más de <strong>80 páginas</strong> repletas de actividades variadas. Es suficiente contenido para mantener a tu hijo entretenido durante semanas, dependiendo de su ritmo.
+                    <?php echo esc_html(ekc_get_option('faq_2_answer', 'No, las actividades están pensadas para que los niños las resuelvan de forma autónoma, aunque siempre se puede hacer en familia.')); ?>
                 </p>
             </div>
 
             <!-- FAQ 3 -->
             <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-pink">
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
-                    ¿Necesita ayuda de un adulto para hacerlo?
+                    <?php echo esc_html(ekc_get_option('faq_3_question', '¿Cuántas páginas tiene?')); ?>
                 </h3>
                 <p class="text-gray-700 font-sans text-lg">
-                    ¡No! El cuaderno está diseñado para que los niños puedan trabajar de forma <strong>autónoma</strong>. Las instrucciones son claras y sencillas. Sin embargo, puede ser una excelente oportunidad para compartir tiempo de calidad en familia si lo desean.
+                    <?php echo esc_html(ekc_get_option('faq_3_answer', 'El cuaderno contiene más de 100 páginas de actividades variadas y entretenidas.')); ?>
                 </p>
             </div>
 
             <!-- FAQ 4 -->
             <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-yellow">
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
-                    ¿Viene con soluciones?
+                    <?php echo esc_html(ekc_get_option('faq_4_question', '¿Es adecuado para uso escolar?')); ?>
                 </h3>
                 <p class="text-gray-700 font-sans text-lg">
-                    Sí, el cuaderno incluye un <strong>solucionario completo</strong> al final para que los niños puedan verificar sus respuestas y aprender de sus errores de forma independiente.
+                    <?php echo esc_html(ekc_get_option('faq_4_answer', 'Sí, muchos profesores lo utilizan como material complementario o para actividades extraescolares.')); ?>
                 </p>
             </div>
 
             <!-- FAQ 5 -->
             <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-blue">
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
-                    ¿Es adecuado para regalar?
+                    <?php echo esc_html(ekc_get_option('faq_5_question', '¿Viene con soluciones?')); ?>
                 </h3>
                 <p class="text-gray-700 font-sans text-lg">
-                    ¡Por supuesto! Es el regalo perfecto para <strong>cumpleaños, Navidad, o cualquier ocasión especial</strong>. Es educativo, divertido y promueve el aprendizaje lejos de las pantallas. Los padres te lo agradecerán.
+                    <?php echo esc_html(ekc_get_option('faq_5_answer', 'Sí, todas las actividades incluyen sus soluciones al final del cuaderno.')); ?>
                 </p>
             </div>
 
             <!-- FAQ 6 -->
             <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-pink">
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
-                    ¿Cómo y cuándo lo recibiré?
+                    <?php echo esc_html(ekc_get_option('faq_6_question', '¿Está disponible en formato digital?')); ?>
                 </h3>
                 <p class="text-gray-700 font-sans text-lg">
-                    Al comprar a través de Amazon, disfrutas de <strong>envío rápido y seguro</strong>. Si tienes Amazon Prime, lo recibirás en 1-2 días. El proceso de compra es 100% seguro y puedes devolverlo si no quedas satisfecho.
+                    <?php echo esc_html(ekc_get_option('faq_6_answer', 'Actualmente solo está disponible en formato físico a través de Amazon.')); ?>
                 </p>
             </div>
 
             <!-- FAQ 7 -->
             <div class="bg-white rounded-xl p-6 shadow-lg border-l-8 border-brand-yellow">
                 <h3 class="text-2xl font-extrabold text-brand-dark mb-3 font-headline tracking-wider">
-                    ¿Qué formato tiene? ¿Es impreso o digital?
+                    <?php echo esc_html(ekc_get_option('faq_7_question', '¿Ofrece envío internacional?')); ?>
                 </h3>
                 <p class="text-gray-700 font-sans text-lg">
-                    Es un cuaderno <strong>físico impreso</strong> de alta calidad, con papel resistente perfecto para escribir, dibujar y borrar si es necesario. Nada de pantallas, ¡pura diversión analógica!
+                    <?php echo esc_html(ekc_get_option('faq_7_answer', 'Sí, Amazon envía a múltiples países. Consulta la disponibilidad en tu región al momento de comprar.')); ?>
                 </p>
             </div>
         </div>

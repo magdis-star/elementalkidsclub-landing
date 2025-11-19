@@ -219,6 +219,263 @@ function elementalkidsclub_customize_register($wp_customize) {
         'section' => 'interior_section',
         'settings' => 'interior_image',
     )));
+
+    // Testimonials Section
+    $wp_customize->add_section('testimonials_section', array(
+        'title' => __('Testimonials', 'elementalkidsclub'),
+        'priority' => 34,
+        'description' => __('Edit the three customer testimonials displayed on your landing page.', 'elementalkidsclub'),
+    ));
+
+    // Testimonial 1
+    $wp_customize->add_setting('testimonial_1_name', array(
+        'default' => 'María G.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('testimonial_1_name', array(
+        'label' => __('Testimonial 1 - Name', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('testimonial_1_rating', array(
+        'default' => '5',
+        'sanitize_callback' => 'absint',
+    ));
+    $wp_customize->add_control('testimonial_1_rating', array(
+        'label' => __('Testimonial 1 - Rating (1-5)', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'number',
+        'input_attrs' => array('min' => 1, 'max' => 5),
+    ));
+
+    $wp_customize->add_setting('testimonial_1_text', array(
+        'default' => 'A mi hijo de 9 años le encanta. Lo compré por recomendación y ha sido un acierto. Ya lo ha completado casi entero y sigue pidiendo más.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('testimonial_1_text', array(
+        'label' => __('Testimonial 1 - Review Text', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'textarea',
+    ));
+
+    // Testimonial 2
+    $wp_customize->add_setting('testimonial_2_name', array(
+        'default' => 'Laura M.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('testimonial_2_name', array(
+        'label' => __('Testimonial 2 - Name', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('testimonial_2_rating', array(
+        'default' => '5',
+        'sanitize_callback' => 'absint',
+    ));
+    $wp_customize->add_control('testimonial_2_rating', array(
+        'label' => __('Testimonial 2 - Rating (1-5)', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'number',
+        'input_attrs' => array('min' => 1, 'max' => 5),
+    ));
+
+    $wp_customize->add_setting('testimonial_2_text', array(
+        'default' => 'Perfecto para mantenerlos ocupados en esos días de lluvia. Mi hija está súper entretenida y no pide la tablet. ¡Misión cumplida!',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('testimonial_2_text', array(
+        'label' => __('Testimonial 2 - Review Text', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'textarea',
+    ));
+
+    // Testimonial 3
+    $wp_customize->add_setting('testimonial_3_name', array(
+        'default' => 'Carlos R.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('testimonial_3_name', array(
+        'label' => __('Testimonial 3 - Name', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('testimonial_3_rating', array(
+        'default' => '5',
+        'sanitize_callback' => 'absint',
+    ));
+    $wp_customize->add_control('testimonial_3_rating', array(
+        'label' => __('Testimonial 3 - Rating (1-5)', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'number',
+        'input_attrs' => array('min' => 1, 'max' => 5),
+    ));
+
+    $wp_customize->add_setting('testimonial_3_text', array(
+        'default' => 'Tiene actividades muy variadas. Desde sudokus hasta laberintos. Mi hijo no se aburre y es ideal para el desarrollo cognitivo.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('testimonial_3_text', array(
+        'label' => __('Testimonial 3 - Review Text', 'elementalkidsclub'),
+        'section' => 'testimonials_section',
+        'type' => 'textarea',
+    ));
+
+    // FAQ Section
+    $wp_customize->add_section('faq_section', array(
+        'title' => __('FAQ Questions', 'elementalkidsclub'),
+        'priority' => 35,
+        'description' => __('Edit the frequently asked questions and answers.', 'elementalkidsclub'),
+    ));
+
+    // FAQ 1
+    $wp_customize->add_setting('faq_1_question', array(
+        'default' => '¿Para qué edades está recomendado?',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('faq_1_question', array(
+        'label' => __('FAQ 1 - Question', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('faq_1_answer', array(
+        'default' => 'El cuaderno está diseñado específicamente para niños de 8 a 12 años, con actividades que se adaptan a su nivel cognitivo.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('faq_1_answer', array(
+        'label' => __('FAQ 1 - Answer', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'textarea',
+    ));
+
+    // FAQ 2
+    $wp_customize->add_setting('faq_2_question', array(
+        'default' => '¿Necesita supervisión de un adulto?',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('faq_2_question', array(
+        'label' => __('FAQ 2 - Question', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('faq_2_answer', array(
+        'default' => 'No, las actividades están pensadas para que los niños las resuelvan de forma autónoma, aunque siempre se puede hacer en familia.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('faq_2_answer', array(
+        'label' => __('FAQ 2 - Answer', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'textarea',
+    ));
+
+    // FAQ 3
+    $wp_customize->add_setting('faq_3_question', array(
+        'default' => '¿Cuántas páginas tiene?',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('faq_3_question', array(
+        'label' => __('FAQ 3 - Question', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('faq_3_answer', array(
+        'default' => 'El cuaderno contiene más de 100 páginas de actividades variadas y entretenidas.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('faq_3_answer', array(
+        'label' => __('FAQ 3 - Answer', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'textarea',
+    ));
+
+    // FAQ 4
+    $wp_customize->add_setting('faq_4_question', array(
+        'default' => '¿Es adecuado para uso escolar?',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('faq_4_question', array(
+        'label' => __('FAQ 4 - Question', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('faq_4_answer', array(
+        'default' => 'Sí, muchos profesores lo utilizan como material complementario o para actividades extraescolares.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('faq_4_answer', array(
+        'label' => __('FAQ 4 - Answer', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'textarea',
+    ));
+
+    // FAQ 5
+    $wp_customize->add_setting('faq_5_question', array(
+        'default' => '¿Viene con soluciones?',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('faq_5_question', array(
+        'label' => __('FAQ 5 - Question', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('faq_5_answer', array(
+        'default' => 'Sí, todas las actividades incluyen sus soluciones al final del cuaderno.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('faq_5_answer', array(
+        'label' => __('FAQ 5 - Answer', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'textarea',
+    ));
+
+    // FAQ 6
+    $wp_customize->add_setting('faq_6_question', array(
+        'default' => '¿Está disponible en formato digital?',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('faq_6_question', array(
+        'label' => __('FAQ 6 - Question', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('faq_6_answer', array(
+        'default' => 'Actualmente solo está disponible en formato físico a través de Amazon.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('faq_6_answer', array(
+        'label' => __('FAQ 6 - Answer', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'textarea',
+    ));
+
+    // FAQ 7
+    $wp_customize->add_setting('faq_7_question', array(
+        'default' => '¿Ofrece envío internacional?',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('faq_7_question', array(
+        'label' => __('FAQ 7 - Question', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('faq_7_answer', array(
+        'default' => 'Sí, Amazon envía a múltiples países. Consulta la disponibilidad en tu región al momento de comprar.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+    ));
+    $wp_customize->add_control('faq_7_answer', array(
+        'label' => __('FAQ 7 - Answer', 'elementalkidsclub'),
+        'section' => 'faq_section',
+        'type' => 'textarea',
+    ));
 }
 add_action('customize_register', 'elementalkidsclub_customize_register');
 
