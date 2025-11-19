@@ -23,11 +23,9 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
 
         <!-- Columna Izquierda: Mensaje Principal -->
         <div class="order-2 lg:order-1">
-            <div class="bubble-title inline-block mb-6 max-w-lg">
-                <p class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline tracking-wide uppercase">
-                    <?php echo esc_html($hero_title); ?>
-                </p>
-            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline tracking-wide uppercase text-brand-dark mb-6">
+                <?php echo esc_html($hero_title); ?>
+            </h1>
 
             <p class="text-lg sm:text-xl md:text-2xl text-gray-700 mb-8 md:mb-10 font-medium font-sans">
                 <?php echo esc_html($hero_description); ?>
@@ -218,7 +216,7 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
                 </p>
 
                 <!-- Wild Mail Form - REPLACE action URL with your Wild Mail endpoint -->
-                <form id="bonus-form" action="YOUR_WILDMAIL_FORM_ACTION_URL_HERE" method="POST" class="space-y-4">
+                <form id="bonus-form" action="<?php echo esc_url(ekc_get_option('wildmail_url', 'YOUR_WILDMAIL_FORM_ACTION_URL_HERE')); ?>" method="POST" class="space-y-4">
                     <div>
                         <input
                             type="text"

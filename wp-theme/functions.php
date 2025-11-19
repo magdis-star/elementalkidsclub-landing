@@ -186,6 +186,18 @@ function elementalkidsclub_customize_register($wp_customize) {
         'type' => 'url',
     ));
 
+    $wp_customize->add_setting('wildmail_url', array(
+        'default' => 'YOUR_WILDMAIL_FORM_ACTION_URL_HERE',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('wildmail_url', array(
+        'label' => __('Wild Mail Form URL', 'elementalkidsclub'),
+        'section' => 'amazon_section',
+        'type' => 'url',
+        'description' => __('Enter your Wild Mail form action URL from your Wild Mail account.', 'elementalkidsclub'),
+    ));
+
     // Benefits Section
     $wp_customize->add_section('benefits_section', array(
         'title' => __('Benefits Section', 'elementalkidsclub'),
