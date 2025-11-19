@@ -14,13 +14,6 @@ get_header();
 <main class="py-16 md:py-20 lg:py-24 notebook-background min-h-screen">
     <div class="max-w-4xl mx-auto px-6">
 
-        <!-- Logo -->
-        <div class="text-center mb-12">
-            <img src="<?php echo esc_url(ekc_get_option('site_logo', get_template_directory_uri() . '/images/logo.png')); ?>"
-                 alt="Elemental Kids Club"
-                 class="h-24 md:h-32 w-auto mx-auto">
-        </div>
-
         <!-- Card -->
         <div class="bg-white/95 rounded-2xl shadow-2xl p-8 md:p-12 border-4 border-brand-yellow">
 
