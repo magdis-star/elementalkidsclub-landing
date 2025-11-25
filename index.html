@@ -352,12 +352,22 @@
                         ¿Ya compraste el libro? <strong>Descarga tu contenido extra GRATIS.</strong> Introduce tu nombre y email para recibir actividades adicionales directamente en tu bandeja de entrada.
                     </p>
 
-                    <!-- ActiveCampaign Form - REPLACE with: https://elementalkidsclub.activehosted.com/f/1 -->
-                    <form id="bonus-form" action="https://elementalkidsclub.activehosted.com/f/1" method="POST" class="space-y-4">
+                    <!-- ActiveCampaign Form -->
+                    <form id="bonus-form" action="https://elementalkidsclub.activehosted.com/proc.php" method="POST" class="space-y-4">
+                        <!-- Hidden fields for ActiveCampaign -->
+                        <input type="hidden" name="u" value="1" />
+                        <input type="hidden" name="f" value="1" />
+                        <input type="hidden" name="s" />
+                        <input type="hidden" name="c" value="0" />
+                        <input type="hidden" name="m" value="0" />
+                        <input type="hidden" name="act" value="sub" />
+                        <input type="hidden" name="v" value="2" />
+                        <input type="hidden" name="or" value="d7f933eb20b3bb04e3aa2c7d6c80fec3" />
+
                         <div>
                             <input
                                 type="text"
-                                name="name"
+                                name="fullname"
                                 id="bonus-name"
                                 required
                                 placeholder="Tu nombre"
@@ -653,12 +663,6 @@
         if (bonusForm) {
             bonusForm.addEventListener('submit', function(e) {
                 e.preventDefault(); // Always prevent default redirect
-
-                // If URL is not configured, show message
-                if (this.action.includes('YOUR_WILDMAIL_FORM_ACTION_URL_HERE')) {
-                    alert('Por favor, configura la URL de ActiveCampaign en el código del formulario.');
-                    return;
-                }
 
                 // Get form data
                 const formData = new FormData(this);
