@@ -352,8 +352,8 @@
                         ¿Ya compraste el libro? <strong>Descarga tu contenido extra GRATIS.</strong> Introduce tu nombre y email para recibir actividades adicionales directamente en tu bandeja de entrada.
                     </p>
 
-                    <!-- Wild Mail Form - REPLACE action URL with your Wild Mail endpoint -->
-                    <form id="bonus-form" action="YOUR_WILDMAIL_FORM_ACTION_URL_HERE" method="POST" class="space-y-4">
+                    <!-- ActiveCampaign Form - REPLACE with: https://elementalkidsclub.activehosted.com/f/1 -->
+                    <form id="bonus-form" action="https://elementalkidsclub.activehosted.com/f/1" method="POST" class="space-y-4">
                         <div>
                             <input
                                 type="text"
@@ -383,7 +383,7 @@
                     <div id="bonus-success" class="mt-4 text-green-700 bg-green-100 p-4 rounded-xl hidden">
                         <p class="font-semibold flex items-center font-sans">
                             <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i>
-                            ¡Perfecto! Revisa tu email para descargar el bonus.
+                            ¡Perfecto! Revisa tu email y confirma tu suscripción para recibir el bonus.
                         </p>
                     </div>
                 </div>
@@ -652,22 +652,37 @@
 
         if (bonusForm) {
             bonusForm.addEventListener('submit', function(e) {
-                // If Wild Mail URL is not configured, prevent default and show message
+                e.preventDefault(); // Always prevent default redirect
+
+                // If URL is not configured, show message
                 if (this.action.includes('YOUR_WILDMAIL_FORM_ACTION_URL_HERE')) {
-                    e.preventDefault();
-                    alert('Por favor, configura la URL de Wild Mail en el código del formulario.');
+                    alert('Por favor, configura la URL de ActiveCampaign en el código del formulario.');
                     return;
                 }
 
-                // Show success message after form submission
-                // Note: This will only work if Wild Mail redirects back or if using AJAX
-                setTimeout(() => {
+                // Get form data
+                const formData = new FormData(this);
+
+                // Submit via AJAX to prevent redirect
+                fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Required for ActiveCampaign
+                })
+                .then(() => {
+                    // Show success message
                     bonusSuccess.classList.remove('hidden');
                     bonusForm.reset();
+
+                    // Hide success message after 8 seconds
                     setTimeout(() => {
                         bonusSuccess.classList.add('hidden');
                     }, 8000);
-                }, 1000);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('Hubo un problema al enviar el formulario. Por favor, intenta de nuevo.');
+                });
             });
         }
 
