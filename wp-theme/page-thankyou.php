@@ -86,17 +86,17 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
             </div>
 
             <!-- Support Info -->
-            <div class="bg-brand-blue/10 p-6 rounded-xl border-2 border-brand-blue/20">
+            <div class="bg-brand-blue/10 p-4 md:p-6 rounded-xl border-2 border-brand-blue/20">
                 <div class="flex items-start space-x-3">
-                    <i data-lucide="help-circle" class="w-6 h-6 text-brand-blue flex-shrink-0 mt-1"></i>
-                    <div>
-                        <h3 class="text-xl font-extrabold text-brand-dark mb-2 font-headline tracking-wider">
+                    <i data-lucide="help-circle" class="w-5 h-5 md:w-6 md:h-6 text-brand-blue flex-shrink-0 mt-1"></i>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-lg md:text-xl font-extrabold text-brand-dark mb-2 font-headline tracking-wider">
                             ¿Necesitas ayuda?
                         </h3>
-                        <p class="text-base text-gray-700 font-sans">
+                        <p class="text-sm md:text-base text-gray-700 font-sans break-words">
                             Si no recibes el email en 10 minutos o tienes algún problema, no dudes en contactarnos en:
                         </p>
-                        <a href="mailto:hola@elementalkidsclub.com" class="text-brand-pink font-bold text-lg hover:underline inline-block mt-2">
+                        <a href="mailto:hola@elementalkidsclub.com" class="text-brand-pink font-bold text-base md:text-lg hover:underline inline-block mt-2 break-all">
                             hola@elementalkidsclub.com
                         </a>
                     </div>
