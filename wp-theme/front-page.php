@@ -206,49 +206,23 @@ $amazon_url = ekc_get_option('amazon_url', 'https://www.amazon.es/-/en/dp/B0G1YY
                 El cuaderno incluye retos como <strong>"Siete Diferencias"</strong>, <strong>"Operación Incógnita"</strong> y <strong>"Busca y Encuentra"</strong> que garantizan que el cerebro de tu hijo trabaje a máxima potencia.
             </p>
 
-            <!-- Bonus Descargable Form -->
+            <!-- Bonus Descargable -->
             <div class="bg-white/90 p-6 md:p-8 rounded-xl shadow-lg border-4 border-brand-yellow">
                 <h3 class="text-2xl md:text-3xl font-extrabold text-brand-pink mb-4 font-headline tracking-wider uppercase">
                     <i data-lucide="gift" class="w-6 h-6 md:w-7 md:h-7 inline mr-2"></i> ¡BONUS EXCLUSIVO!
                 </h3>
                 <p class="text-lg md:text-xl text-gray-700 mb-6 font-sans">
-                    ¿Ya compraste el libro? <strong>Descarga tu contenido extra GRATIS.</strong> Introduce tu nombre y email para recibir actividades adicionales directamente en tu bandeja de entrada.
+                    ¿Ya compraste el libro? <strong>Descarga tu contenido extra GRATIS.</strong> Haz clic en el botón para recibir actividades adicionales directamente en tu bandeja de entrada.
                 </p>
 
-                <!-- Wild Mail Form - REPLACE action URL with your Wild Mail endpoint -->
-                <form id="bonus-form" action="<?php echo esc_url(ekc_get_option('wildmail_url', 'YOUR_WILDMAIL_FORM_ACTION_URL_HERE')); ?>" method="POST" class="space-y-4">
-                    <div>
-                        <input
-                            type="text"
-                            name="name"
-                            id="bonus-name"
-                            required
-                            placeholder="Tu nombre"
-                            class="w-full px-4 py-3 text-lg border-2 border-brand-dark rounded-lg focus:outline-none focus:ring-4 focus:ring-brand-yellow/50 font-sans">
-                    </div>
-                    <div>
-                        <input
-                            type="email"
-                            name="email"
-                            id="bonus-email"
-                            required
-                            placeholder="tu@email.com"
-                            class="w-full px-4 py-3 text-lg border-2 border-brand-dark rounded-lg focus:outline-none focus:ring-4 focus:ring-brand-yellow/50 font-sans">
-                    </div>
-                    <button
-                        type="submit"
-                        class="cta-button-3d w-full px-8 py-4 bg-brand-pink text-white text-xl md:text-2xl font-bold rounded-xl transition duration-300 font-headline tracking-wider border-2 border-brand-dark hover:bg-red-500">
-                        <i data-lucide="download" class="w-6 h-6 inline mr-3"></i> DESCARGAR BONUS AHORA
-                    </button>
-                </form>
-
-                <!-- Success Message -->
-                <div id="bonus-success" class="mt-4 text-green-700 bg-green-100 p-4 rounded-xl hidden">
-                    <p class="font-semibold flex items-center font-sans">
-                        <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i>
-                        ¡Perfecto! Revisa tu email para descargar el bonus.
-                    </p>
-                </div>
+                <!-- Direct link to ActiveCampaign form -->
+                <a
+                    href="https://elementalkidsclub.activehosted.com/f/1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cta-button-3d block w-full px-8 py-4 bg-brand-pink text-white text-xl md:text-2xl font-bold rounded-xl transition duration-300 font-headline tracking-wider border-2 border-brand-dark hover:bg-red-500 text-center">
+                    <i data-lucide="download" class="w-6 h-6 inline mr-3"></i> DESCARGAR BONUS AHORA
+                </a>
             </div>
         </div>
     </div>

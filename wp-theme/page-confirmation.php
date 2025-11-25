@@ -84,13 +84,14 @@ get_header();
             </div>
 
             <!-- Info Box -->
-            <div class="mt-10 bg-brand-blue/5 p-6 rounded-xl border-2 border-brand-blue/20">
+            <div class="mt-10 bg-brand-blue/5 p-4 md:p-6 rounded-xl border-2 border-brand-blue/20">
                 <div class="flex items-start space-x-3">
-                    <i data-lucide="info" class="w-6 h-6 text-brand-blue flex-shrink-0 mt-1"></i>
-                    <div>
-                        <p class="text-lg text-gray-700 font-sans">
-                            <strong>¿Problemas para encontrar el email?</strong> Asegúrate de revisar la carpeta de spam, promociones o correo no deseado. Si después de 10 minutos no lo encuentras, contáctanos en
-                            <a href="mailto:hola@elementalkidsclub.com" class="text-brand-pink font-bold hover:underline">hola@elementalkidsclub.com</a>
+                    <i data-lucide="info" class="w-5 h-5 md:w-6 md:h-6 text-brand-blue flex-shrink-0 mt-1"></i>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-base md:text-lg text-gray-700 font-sans break-words">
+                            <strong class="block mb-1">¿Problemas para encontrar el email?</strong>
+                            <span class="block">Asegúrate de revisar la carpeta de spam, promociones o correo no deseado. Si después de 10 minutos no lo encuentras, contáctanos en
+                            <a href="mailto:hola@elementalkidsclub.com" class="text-brand-pink font-bold hover:underline break-all">hola@elementalkidsclub.com</a></span>
                         </p>
                     </div>
                 </div>
